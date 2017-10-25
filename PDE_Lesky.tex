@@ -1,0 +1,171 @@
+\documentclass[12pt,a4paper]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,scale=0.8]{geometry}
+
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+
+%Ändere Chapter
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+\setkomafont{chapter}{\changefont{pnc}{b}{sc}\Huge\bfseries}
+
+
+%Ändere Section
+%\renewcommand{\thesection}{\arabic{section}}
+\setkomafont{section}{\changefont{pnc}{b}{sc}\large\bfseries}
+ 
+%\usepackage{fancyhdr}
+%
+%\pagestyle{fancy} %eigener Seitenstil
+%\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+%\fancyhead[L]{Philipp Beck} %Kopfzeile links
+%\fancyhead[C]{} %zentrierte Kopfzeile
+%\fancyhead[R]{13.07.2017} %Kopfzeile rechts
+%\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+%\fancyfoot[C]{\thepage} %Seitennummer
+%\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+\usepackage{paralist}
+\usepackage{enumitem} 
+
+%\usepackage {picins}
+\usepackage{color}
+\usepackage{float}
+
+% -- Mathe
+%\usepackage{gensymb}
+%fancyhdr, lastpage, booktabs, xy
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+
+
+% -- Malen
+\usepackage{tikz}
+
+\usetikzlibrary{patterns, decorations.pathreplacing, decorations.pathmorphing, arrows}
+
+\usepackage{units}
+
+\numberwithin{equation}{section}
+
+\author{Philipp Beck, Daniel Winkle}
+
+\subtitle{Wintersemester 17/18}
+\title{Klassische Theorie partieller Differentialgleichungen}
+
+%\makeatletter
+%\renewcommand*{\thesection}{\arabic{section}}
+%\renewcommand*{\p@section}{\thechapter.}
+
+%Befehle für bestimmte mathematische Symbole
+\newcommand{\td}[1]{ \ \text{\rmfamily d} #1}
+\renewcommand{\div}{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\grad}{\operatorname{grad}}
+%Mengensymbole
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zn}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\renewcommand{\i}{\textrm{i}}
+
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%Big and italic
+\newcommand{\bi}[1]{\textbf{\textit{#1}}}
+
+\swapnumbers
+
+\newtheoremstyle{satz}% name
+{15pt}% Space above
+{5pt}% Space below
+{\itshape}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{def}% name
+{15pt}% Space above
+{5pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{exercise}% name
+{15pt}% Space above
+{5pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{0.5em}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+
+
+
+
+\newcommand{\thistheoremname}{}
+\theoremstyle{satz}
+%Satz
+\newtheorem{sz}{Satz}[chapter]
+%\renewcommand{\thesz}{\arabic{\thechapter.\arabic{sz}}
+%Lemma
+\newtheorem{lemma}[sz]{Lemma}
+\newtheorem{gsz}[sz]{\thistheoremname}
+\newtheorem*{gthm_no_num}{\thistheoremname}
+
+
+\theoremstyle{def}
+\newtheorem{df}[sz]{Definition}
+\newtheorem{gd}[sz]{\thistheoremname}
+
+\newtheorem*{gdf_no_num}{\thistheoremname}
+
+
+\theoremstyle{exercise}
+\newtheorem{exe}{Aufgabe}[section]
+\newtheorem{loes}{Lösung}[section]
+
+%Für Beispiele , Bemerkungen
+%Also alles was wie eine Definition aussehen soll, aber keine ist.
+%\begin{genericdf}{(Hier den Text einfügen)}
+%	Inhalt...
+%\end{genericdf}
+\newenvironment{genericdf}[1]{\renewcommand{\thistheoremname}{#1}\begin{gd}}{\end{gd}}
+%Dasselbe ohne Nummerierung
+\newenvironment{generidf_no_num}[1]{\renewcommand{\thistheoremname}{#1}\begin{gdf_no_num}}{\end{gdf_no_num}}
+
+%Hier für Sätze
+\newenvironment{genericthm}[1]{\renewcommand{\thistheoremname}{#1}\begin{gsz}}{\end{gsz}}
+%Analog zu Definitionen
+\newenvironment{genericthm_no_num}[1]{\renewcommand{\thistheoremname}{#1}\begin{gthm_no_num}}{\end{gthm_no_num}}
+\parindent0pt
+%\parskip1ex
+
+
+%----Dokument----
+
+\begin{document}
+\changefont{pnc}{m}{n}
+\maketitle
+\chapter{Einführung}
+\input{chapter/einfuehrung.tex}
+\end{document}
