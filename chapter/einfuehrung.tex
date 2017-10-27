@@ -61,5 +61,105 @@ Nun bezeichnet man
 \Delta \varphi &= \rho\\
 \Delta \varphi &= 0
 \end{align*}
-als \textit{Poisson-und Laplacegleichung}.
+als \textit{Poisson-bzw. Laplacegleichung}.
+\end{genericdf}
+
+\begin{genericdf}{Wärmeleitung}
+Sei $\nu:[0, \infty) \times \R^3 \to \R$ eine Temperaturverteilung.
+Dann ist die Wärmeenergie durch
+\begin{align*}
+\int \limits_\Omega c \cdot \nu(t,x) \td{x}
+\end{align*}
+für eine Materialkonstante $c$ gegeben.
+Die Energieänderung erhält man nun durch
+\begin{align*}
+\int \limits_\Omega c \cdot \nu(t_1,x) \td{x}
+&-
+\int \limits_\Omega c \cdot \nu(t_2,x) \td{x}
+\stackrel{\text{Physik}}{=}
+\int \limits_{t_1}^{t_2} 
+\underbrace{\int \limits _{\partial \Omega} 
+\alpha \ \nabla \nu(t,x) \cdot n \td{x}}_{\text{Wärmefluss aus $\Omega$}} \td{t}\\
+&\stackrel{\text{Gauß-O.}}{=}
+\int \limits_{t_1}^{t_2}
+\int \limits_\Omega 
+\nabla \cdot ( \alpha \ \nabla \nu(t,x)) \td{x} \td{t}.
+\end{align*}
+Da $t_1,t_2 $ und $\Omega$ beliebig war, folgt
+\begin{align*}
+\int \limits_{\Omega}
+c \ \partial_t \nu(t,x)  \td{x}
+= 
+\int \limits_{\Omega}
+\nabla \cdot ( \alpha \ \nabla \nu(t,x)) \td{x}
+\end{align*}
+und
+\begin{align*}
+\partial_t \nu(t,x) = \frac{1}{c} \ \nabla \cdot ( \alpha \ \nabla \nu(t,x)).
+\end{align*}
+Es folgt
+\begin{align*}
+\partial_t \nu(t,x) = \frac{\alpha}{c} \Delta\nu(t,x),
+\end{align*}
+falls $\alpha$ eine Konstante ist.
+Diese Differentialgleichung nennt man \textit{homogene Wärmeleitunsgleichung}.	
+\end{genericdf}
+
+\begin{genericdf}{Schallausbreitung}
+Durch
+\begin{align*}
+\partial^2_t u- c \ \gamma u = 0
+\end{align*}
+ist die \textit{homogene Wellengleichung} mit Ausbreitungsgeschwindigkeit $c > 0$ gegeben.
+Weiter ist mit
+\begin{align*}
+v = \frac{1}{\rho} \nabla u
+\end{align*}
+die Geschwindigkeitsverteilung und mit
+\begin{align*}
+p = p_0 - \partial_t u
+\end{align*}
+die Druckverteilung gegeben.
+Man wählt 
+\begin{align*}
+u(t,x) = e^{\i\lambda t} w(x)
+\end{align*}
+als Ansatz zur Entkopplung von Zeit und Ort.
+Durch Einsetzen erhält man 
+\begin{align*}
+- \lambda^2 e^{\i\lambda t} w(x) - 
+c e^{\i\lambda t} \Delta w(x) = 0
+\Leftrightarrow
+\Delta w(x)+ \frac{\lambda^2}{c} w(x) = 0
+\end{align*}
+die \textit{Helmholtz-Gleichung}.
+\end{genericdf}
+
+\begin{genericdf}{Quantenmechanik}
+Es ist die Aufenthaltsgeschwindigkeit
+\begin{align*}
+\varphi : [0, \infty) \times \R^3 \to \R
+\end{align*}
+eines Elektrons gesucht.
+Insbesondere muss
+\begin{align*}
+\int \limits_{\R^3} \varphi(t,x) \td{x}= 1
+\end{align*}
+erfüllt sein.
+Man findet $\varphi$ durch Lösen der durch
+\begin{align*}
+\i \  \partial_t \varphi  = - \Delta \varphi
+\end{align*}
+gegebenen \textit{Schrödingergleichung}.
+\end{genericdf}
+
+\begin{genericdf}{Plattengleichung}
+Die \textit{Plattengleichung} ist durch
+\begin{align*}
+\partial_t^2 - c \ \Delta^2 u = 0
+\end{align*}
+gegeben.
+
+
+
 \end{genericdf}
