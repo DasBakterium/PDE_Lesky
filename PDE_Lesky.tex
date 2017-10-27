@@ -3,30 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage[a4paper,scale=0.8]{geometry}
-
-\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
-
-
-%Ändere Chapter
-%\renewcommand{\thechapter}{\Roman{chapter}}
-
-\setkomafont{chapter}{\changefont{pnc}{b}{sc}\Huge\bfseries}
-
-
-%Ändere Section
-%\renewcommand{\thesection}{\arabic{section}}
-\setkomafont{section}{\changefont{pnc}{b}{sc}\large\bfseries}
  
-%\usepackage{fancyhdr}
-%
-%\pagestyle{fancy} %eigener Seitenstil
-%\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
-%\fancyhead[L]{Philipp Beck} %Kopfzeile links
-%\fancyhead[C]{} %zentrierte Kopfzeile
-%\fancyhead[R]{13.07.2017} %Kopfzeile rechts
-%\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
-%\fancyfoot[C]{\thepage} %Seitennummer
-%\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
 \usepackage{paralist}
 \usepackage{enumitem} 
 
@@ -61,15 +39,22 @@
 \subtitle{Wintersemester 17/18}
 \title{Klassische Theorie partieller Differentialgleichungen}
 
-%\makeatletter
-%\renewcommand*{\thesection}{\arabic{section}}
-%\renewcommand*{\p@section}{\thechapter.}
+
+%Makros
+\newcommand{\bi}[1]{\textbf{\textit{#1}}}
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
 
 %Befehle für bestimmte mathematische Symbole
 \newcommand{\td}[1]{ \ \text{\rmfamily d} #1}
 \renewcommand{\div}{\operatorname{div}}
 \newcommand{\rot}{\operatorname{rot}}
 \newcommand{\grad}{\operatorname{grad}}
+\newcommand{\diag}{\operatorname{diag}}
+\renewcommand{\i}{\textrm{i}}
+\newcommand{\Id}{\operatorname{Id}}
+
+
 %Mengensymbole
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -78,13 +63,10 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 
-\renewcommand{\i}{\textrm{i}}
+
 
 
 \renewcommand\qedsymbol{$\blacksquare$}
-
-%Big and italic
-\newcommand{\bi}[1]{\textbf{\textit{#1}}}
 
 \swapnumbers
 
@@ -160,6 +142,12 @@
 \parindent0pt
 %\parskip1ex
 
+
+%Ändere Chapter
+\setkomafont{chapter}{\changefont{pnc}{b}{sc}\Huge\bfseries}
+
+%Ändere Section
+\setkomafont{section}{\changefont{pnc}{b}{sc}\large\bfseries}
 
 %----Dokument----
 

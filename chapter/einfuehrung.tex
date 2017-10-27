@@ -159,7 +159,138 @@ Die \textit{Plattengleichung} ist durch
 \partial_t^2 - c \ \Delta^2 u = 0
 \end{align*}
 gegeben.
-
-
-
 \end{genericdf}
+
+\begin{genericdf}{Elektromagnetische Wellen}
+Gegeben sei die Stromdichte 
+$j : [0, \infty) \times \R^3 \to \R^3$
+und die Ladungsdichte
+$\rho : [0,\infty) \times \R^3 \to \R$.
+Gesucht ist nun die elektrische/magnetische Feldstärke $E,H : [0, \infty)\times \R^3 \to \R^3$, 
+welche die durch
+\begin{align*}
+\partial_t E + j &= \nabla \times H\\
+\partial_t H 	&= - \nabla \times E\\
+\nabla \cdot E &= \rho\\
+\nabla \cdot H &= 0
+\end{align*}
+gegeben \textit{Maxwell-Gleichungen} erfüllen.
+Durch 
+\begin{align*}
+\Delta E &= \nabla( \nabla \cdot E ) - \nabla \times ( \nabla \times E) 
+= \nabla \rho + \nabla \times \partial_t H 
+= \nabla \rho + \partial_t(\nabla \times  H)\\
+&= \nabla \rho + \partial_t(\partial_t E + j) 
+\end{align*}
+folgt mit
+\begin{align*}
+\partial^2_t E = \Delta E - \partial_t j - \nabla \rho
+\end{align*}
+die \textit{inhomogene Wellengleichung}
+\end{genericdf}
+
+\newpage
+\section{Typeinteilung}
+
+\begin{df}
+
+Sei die lineare partielle Differentialgleichung 
+$2.$ Ordnung gegeben durch
+\begin{align}\label{equation:1.2.1}
+\sum \limits_{i,k= 0}^n a_{ik}(x) \ \partial_{x_i} \partial_{x_k} u(x)
++ \sum \limits_{i = 0}^n b_i(x) \ \partial_{x_i} u(x)
++ c(x) \ u(x).
+\end{align}
+Dabei ist $A(x) = (a_{ik}(x))_{i,k = 0,\dots,n}$ eine reelle symmetrische Matrix und es gilt\\
+$x = (x_0, x_1, \dots, x_n) \in [0,\infty) \times \R^n$.\\
+Seien $\lambda_1(x), \dots, \lambda_n(x)$ die nicht notwendigerweise verschiedenen Eigenwerte von $A(x)$.
+Die Eigenwerte werden entsprechend ihrer Vielfachheit gezählt.
+Dann nennt man
+\begin{align*}
+d(x) = \# \lbrace j \in \lbrace 0, \dots, n \rbrace \ | \ \lambda_j(x) = 0 \rbrace
+\end{align*}
+die \bi{Defektzahl} und 
+\begin{align*}
+t(x) = \# \lbrace j \in \lbrace 0, \dots, n \rbrace \ | \ \lambda_j(x) < 0 \rbrace
+\end{align*}
+den \bi{Trägheitsindex}.
+Nun heißt die Differentialgleichung \ref{equation:1.2.1} im Punkt $x$
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\begin{enumerate}
+\item \bi{hyperbolisch}, falls $d(x)= 0 $ und $t(x) \in \lbrace 1, n \rbrace$.
+
+\item \bi{parabolisch}, falls $d(x) > 0$.
+
+\item \bi{elliptisch}, falls $d(x)  = 0$ und $t(x) \in \lbrace 0, n+1 \rbrace$.
+
+\item \bi{ultrahyperbolisch}, falls $d(x) = 0 $ und $1 < t(x) < n$.
+\end{enumerate}
+\end{df}
+
+\begin{genericdf}{Beispiele}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+\item 
+Für die Wellengleichung 
+\begin{align*}
+\partial^2_t u - \Delta u = 0
+\end{align*}
+ist
+\begin{align*}
+(a_{ik}) = \diag(1,-1, \dots, \-1)
+\end{align*}
+unabhängig von $x$.
+Damit ist $t(x) = n$ und $d(x) = 0$.
+Also ist die Wellengleichung hyperbolisch.
+
+\item
+Für die Laplace-bzw. Poissiongleichung
+\begin{align*}
+\Delta u = 0, \quad \Delta u = f
+\end{align*}
+gilt
+\begin{align*}
+(a_{ik}) = \Id = \diag(1, \dots, 1),
+\end{align*}
+woraus $d(x) = t(x) = 0$ folgt.
+Damit sind beide Gleichungen elliptisch.
+
+\item
+Genauso wie in (b) erkennt man, dass die Helmholtz-Gleichung
+\begin{align*}
+\Delta u + c \ u = 0
+\end{align*}
+elliptisch ist.
+
+\item
+Die Wärmeleitunsgleichung 
+\begin{align*}
+\partial_t u - \Delta u  = 0 
+\end{align*}
+ist mit 
+\begin{align*}
+(a_{ik}) = \diag(0,-1, \dots , -1)
+\end{align*}
+parabolisch ($d(x) = 1$).
+
+\item
+Die Tricomi-Gleichung
+\begin{align*}
+x_2 \partial_{x_1}^2 u + \partial_{x_2}^2 u = 0
+\end{align*}
+mit 
+\begin{align*}
+a_{ik}(x_1,x_2) = 
+\begin{pmatrix}
+x_2 & 0 \\
+0  & 1 
+\end{pmatrix}
+\end{align*}
+ist 
+\begin{itemize}
+\item elliptisch für $x_2 > 0$.
+\item parabolisch für $x_2 = 0$.
+\item hyperbolisch für $x_2 < 0$.
+\end{itemize}
+\end{enumerate}
+\end{genericdf} 
