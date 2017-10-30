@@ -1,0 +1,49 @@
+\section{Die Laplace-Poisson Gleichung}
+
+\begin{df}
+Man nennt $u \in C^2( \Omega \to \R)$
+\bi{harmonisch}, falls
+\begin{align*}
+\Delta u = 0
+\end{align*}
+in $\Omega$ erfüllt ist.
+\end{df}
+Nun sucht man eine radialsymmetrische harmonische Funktion
+$u = u(|x|) = u(r)$.
+Den Laplace-Operator kann man durch
+\begin{align*}
+\Delta
+= \frac{\partial^2}{\partial r^2} 
++ \frac{m-1}{r} \ \frac{\partial}{\partial r}
++ \text{Terme mit Ableitung nach Winkeln}
+\end{align*}
+in Polarkoordinaten im $\R^m$ schreiben.
+Damit erhält man mit
+\begin{align*}
+u^{\prime \prime}(r) + \frac{m-1}{r} \ u^\prime(r) = 0
+\end{align*}
+das Fundamentalsystem
+\begin{align*}
+u(r) = c, \quad
+u(r) =
+\begin{cases}
+\frac{c}{r^{m-2}}, &\ \text{falls} \ m\geq 3\\
+c \ \ln(r) , &\ \text{falls} \ m = 2
+\end{cases}
+\end{align*}
+der Laplace-Gleichung.
+
+\begin{df}
+Die \bi{Fundamentallösung} der Laplacegleichung ist durch
+\begin{align*}
+\Phi_m(r)
+:= 
+\begin{cases}
+\frac{1}{2 \pi} \ \ln(r), &\ \text{falls} \ m=2 \\
+\frac{-1}{(m-2) \ |S_{m-1}| r^{m-2}}, &\ \text{falls} \ m \geq 3
+\end{cases}
+\end{align*}
+gegeben.
+Dabei ist $|S_{m-1}|$ das Maß der Einheitssphäre in $\R^m$.
+Es gilt beispielsweise $|S_1| = 2 \Pi$.
+\end{df}
