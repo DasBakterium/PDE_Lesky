@@ -167,14 +167,14 @@ $j : [0, \infty) \times \R^3 \to \R^3$
 und die Ladungsdichte
 $\rho : [0,\infty) \times \R^3 \to \R$.
 Gesucht ist nun die elektrische/magnetische Feldstärke $E,H : [0, \infty)\times \R^3 \to \R^3$, 
-welche die durch
+welche die vier
 \begin{align*}
 \partial_t E + j &= \nabla \times H\\
 \partial_t H 	&= - \nabla \times E\\
 \nabla \cdot E &= \rho\\
 \nabla \cdot H &= 0
 \end{align*}
-gegeben \textit{Maxwell-Gleichungen} erfüllen.
+\textit{Maxwell-Gleichungen} erfüllen.
 Durch 
 \begin{align*}
 \Delta E &= \nabla( \nabla \cdot E ) - \nabla \times ( \nabla \times E) 
@@ -237,7 +237,7 @@ Für die Wellengleichung
 \end{align*}
 ist
 \begin{align*}
-(a_{ik}) = \diag(1,-1, \dots, \-1)
+(a_{ik}) = \diag(1,-1, \dots, -1)
 \end{align*}
 unabhängig von $x$.
 Damit ist $t(x) = n$ und $d(x) = 0$.
@@ -303,4 +303,28 @@ ist
 \item Welche Bedingungen sind für die Eindeutigkeit zu stellen.
 \item Stetige Abhängigkeit der Lösung von gegebenen Daten.
 \end{enumerate}
+\end{genericdf}
+
+\begin{genericdf}{Bezeichnungen}
+Mit 
+\begin{align*}
+\supp(f) := \overline{\lbrace x \in D(f) \ | \ f(x) \neq 0 \rbrace}
+\end{align*}
+bezeichnet man den \bi{Träger / Support} von $f$.
+Mit
+\begin{align*}
+C^k_0(\Omega) 
+:=
+\lbrace f \in C^k(\Omega \to \R), \ \supp(f) \subset \Omega \ \text{kompakt} \rbrace
+\end{align*}
+bezeichnet man die kompakt getragenen und $k$-mal stetig differenzierbaren Funktionen.
+Im Folgenden sei $\Omega \subseteq \R^m$ ein Gebiet mit glattem Rand $\partial \Omega$, sodass der Satz von Gauß-Ostrogradski angewendet werden kann.
+Insbesondere gilt dann die \bi{Greensche Formel}
+\begin{align*}
+\int \limits_{\Omega} ( f \ \nabla g - \nabla f \ g ) \td{x}
+=
+\int \limits_{\partial \Omega}
+f \ n \cdot \nabla g - g \ n \cdot \nabla f \td{x},
+\end{align*}
+wobei $n$ der aus $\Omega$ zeigende Normaleneinheitsvektor ist.
 \end{genericdf}
